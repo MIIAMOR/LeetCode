@@ -10,26 +10,43 @@ public class UniquePaths {
      * @param n
      * @return
      */
-    public int uniquePaths(int m, int n) {
+    public int uniquePaths1(int m, int n) {
         int[][] dp = new int[m][n];
-        //初始化左边以及上边的边界值
-        for (int i = 0; i < m; i++) {
-            dp[i][0] = 1;
-        }
-        for (int j = 0; j < n; j++) {
-            dp[0][j] = 1;
-        }
         //递推求解数组中的每个值
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0) dp[i][j] = 1;
+                else
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
             }
         }
         return dp[m - 1][n - 1];
     }
 
+    /**
+     * 动态规划算法空间优化<br>
+     * 遍历得时候按照行进行遍历，那么只需要记录上一行和当前点的左边即可
+     *
+     * @param m
+     * @param n
+     * @return
+     */
+    public int uniquePaths2(int m, int n) {
+        int[] preRow = new int[n];
+        int[] currRow = new int[n];
+        currRow[0] = 1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (i == 0) currRow[j] = 1;
+                else currRow[j] = preRow[j] + currRow[j - 1];
+            }
+            System.arraycopy(currRow, 0, preRow, 0, n);
+        }
+        return currRow[n - 1];
+    }
+
     public static void main(String[] args) {
         UniquePaths up = new UniquePaths();
-        System.out.println(up.uniquePaths(3, 7));
+        System.out.println(up.uniquePaths1(3, 7));
     }
 }
