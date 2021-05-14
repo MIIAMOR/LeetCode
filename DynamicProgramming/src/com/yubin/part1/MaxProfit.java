@@ -1,4 +1,4 @@
-package com.learn.part1;
+package com.yubin.part1;
 
 public class MaxProfit {
     /**

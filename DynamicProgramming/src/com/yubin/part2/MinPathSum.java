@@ -1,4 +1,4 @@
-package com.learn.part2;
+package com.yubin.part2;
 
 public class MinPathSum {
     /**

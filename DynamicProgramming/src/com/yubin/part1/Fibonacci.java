@@ -1,4 +1,4 @@
-package com.learn.part1;
+package com.yubin.part1;
 
 /**
  * 动态规划题目：斐波那契数列
