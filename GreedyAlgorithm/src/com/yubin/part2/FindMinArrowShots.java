@@ -1,11 +1,10 @@
 package com.yubin.part2;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class FindMinArrowShots {
     /**
-     * 贪心思想：从最高的气球向下看
+     * 贪心思想：从最低的气球向上看
      *
      * @param points
      * @return
@@ -17,9 +16,9 @@ public class FindMinArrowShots {
             else if (o1[1] < o2[1]) return -1;
             else return 0;
         });//按照气球的最高点进行排序
-        int high = points[0][1];//记录最后一个气球的低点位置
+        int high = points[0][1];//记录第一个气球的高点位置
         int res = 1;
-        //迭代的过程就是判断每一枪在可以打到目前剩下气球中最高的一个的同时至少还可以打中对少个气球
+        //迭代的过程就是判断每一枪在可以打到目前剩下气球中最矮的一个的同时至少还可以打中对少个气球
         for (int[] point : points) {
             if (point[0] <= high)
                 continue;
