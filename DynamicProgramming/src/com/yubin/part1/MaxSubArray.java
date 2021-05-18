@@ -23,9 +23,21 @@ public class MaxSubArray {
         return res;
     }
 
+    public int maxSubArray2(int[] nums) {
+        int curr = nums[0];
+        int res = nums[0];
+        //按照递推规律求得dp数组的值
+        for (int i = 1; i < nums.length; i++) {
+            curr = Math.max(curr + nums[i], nums[i]);
+            res = Math.max(res, curr);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         MaxSubArray msa = new MaxSubArray();
         int[] nums = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(msa.maxSubArray1(nums));
+        System.out.println(msa.maxSubArray2(nums));
     }
 }
