@@ -18,7 +18,7 @@ public class FindMinArrowShots {
         });//按照气球的最高点进行排序
         int high = points[0][1];//记录第一个气球的高点位置
         int res = 1;
-        //迭代的过程就是判断每一枪在可以打到目前剩下气球中最矮的一个的同时至少还可以打中对少个气球
+        //迭代的过程就是判断每一枪在可以打到目前剩下气球中最矮的一个的同时至少还可以打中少个气球
         for (int[] point : points) {
             if (point[0] <= high)
                 continue;
