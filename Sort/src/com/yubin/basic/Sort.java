@@ -1,5 +1,7 @@
 package com.yubin.basic;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Comparator;
 import java.util.Random;
 
@@ -25,6 +27,49 @@ public class Sort {
         Object c = ele[i];
         ele[i] = ele[j];
         ele[j] = c;
+    }
+
+
+    /**
+     * 希尔排序板块
+     * ---------------------------------------------------------------------------------------------------------------------------
+     */
+    /**
+     * 希尔排序的思想：
+     * 局部排序使用插入排序是因为数组已经局部有序
+     * 那么插入成功后可以直接break出循环，从而降低时间复杂度
+     *
+     * @param ele
+     */
+    public static void shellSort(Comparable[] ele) {
+        int len = ele.length;
+        //第一步：进行二分分组，gap为组数，组数每次二分
+        for (int gap = len / 2; gap >= 1; gap /= 2) {
+            //第二部，依次查看每组
+            for (int i = 0; i < gap; i++) {
+                //第三步，对每组的元素进行排序，这里使用插入排序
+                for (int j = i; j < len; j += gap) {
+                    for (int k = j; k >= gap; k -= gap) {
+                        if (ele[k].compareTo(ele[k - gap]) < 0) exch(ele, k, k - gap);
+                        else break;
+                    }
+                }
+            }
+        }
+    }
+
+    public static void shellSort(Object @NotNull [] ele, Comparator comparator) {
+        int len = ele.length;
+        for (int gap = len / 2; gap >= 1; gap /= 2) {
+            for (int i = 0; i < gap; i++) {
+                for (int j = i; j < len; j += gap) {
+                    for (int k = j; k >= gap; k -= gap) {
+                        if (comparator.compare(ele[k], ele[k - gap]) < 0) exch(ele, k, k - gap);
+                        else break;
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -72,9 +117,8 @@ public class Sort {
             temp[index++] = ele[leftI++];
         while (rightI <= right)
             temp[index++] = ele[rightI++];
-        for (int i = 0; i < temp.length; i++) {
+        for (int i = 0; i < temp.length; i++)
             ele[i + left] = temp[i];
-        }
     }
 
     private static void merge(Comparable[] ele, int left, int mid, int right) {
