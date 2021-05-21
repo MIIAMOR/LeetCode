@@ -1,4 +1,4 @@
-package com.yubin.part1;
+package com.yubin.part2;
 
 public class LengthOfLongestSubstring {
     /**
