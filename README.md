@@ -4,5 +4,5 @@
 
 ## 2.[贪心算法](https://github.com/MIIAMOR/LeetCode/blob/master/GreedyAlgorithm/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95.md)
 
-## 3.排序
+## 3.双指针
 
