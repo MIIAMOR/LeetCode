@@ -81,6 +81,7 @@ public class FindLongestWord {
         dic1.add("monkey");
         dic1.add("plea");
         System.out.println(flw.findLongestWord(s1, dic1));
+        System.out.println(flw.findLongestWord1(s1, dic1));
 
         String s2 = "abpcplea";
         List<String> dic2 = new ArrayList<>();
