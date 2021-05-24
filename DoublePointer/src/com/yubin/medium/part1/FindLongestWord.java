@@ -64,9 +64,8 @@ public class FindLongestWord {
         int bigLeft = 0, smallLeft = 0;
 
         while (smallLeft < smallStr.length() && bigLeft < bigStr.length()) {
-            if (smallStr.charAt(smallLeft) == bigStr.charAt(bigLeft))
+            if (smallStr.charAt(smallLeft) == bigStr.charAt(bigLeft++))
                 smallLeft++;
-            bigLeft++;
         }
 
         return smallLeft == smallStr.length();
