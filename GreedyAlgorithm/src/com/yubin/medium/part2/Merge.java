@@ -2,6 +2,7 @@ package com.yubin.medium.part2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Merge {
@@ -15,7 +16,7 @@ public class Merge {
     public int[][] merge(int[][] intervals) {
         int len = intervals.length;
         List<int[]> res = new ArrayList<>();
-        Arrays.sort(intervals, (o1, o2) -> o1[0] - o2[0]);
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
         for (int i = 0; i < len; i++) {
             int[] curr = new int[2];
             int currLeft = intervals[i][0];
