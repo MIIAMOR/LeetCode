@@ -4,7 +4,7 @@
 
 ## 2.[双指针](https://github.com/MIIAMOR/LeetCode/blob/master/DoublePointer/%E5%8F%8C%E6%8C%87%E9%92%88.md)
 
-## 3.二分查找
+## 3.[二分查找](https://github.com/MIIAMOR/LeetCode/blob/master/BinarySearch/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.md)
 
 ## 4.[排序](https://github.com/MIIAMOR/LeetCode/blob/master/Sort/%E6%8E%92%E5%BA%8F.md)
 

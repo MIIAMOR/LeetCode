@@ -81,11 +81,11 @@ public class Sort {
         mergeSort(ele, 0, ele.length - 1);
     }
 
-    public static void mergeSort(Object[] ele, Comparator comparator) {
+    public static void mergeSort(Object[] ele, Comparator<Object> comparator) {
         mergeSort(ele, 0, ele.length - 1, comparator);
     }
 
-    public static void mergeSort(Object[] ele, int left, int right, Comparator comparator) {
+    public static void mergeSort(Object[] ele, int left, int right, Comparator<Object> comparator) {
         if (left >= right) return;
         int mid = (right - left) / 2 + left;
         mergeSort(ele, left, mid, comparator);
@@ -108,7 +108,7 @@ public class Sort {
      * @param right
      * @param comparator
      */
-    private static void merge(Object[] ele, int left, int mid, int right, Comparator comparator) {
+    private static void merge(Object[] ele, int left, int mid, int right, Comparator<Object> comparator) {
         Object[] temp = new Object[right - left + 1];
         int leftI = left, rightI = mid + 1, index = 0;
         while (leftI <= mid && rightI <= right)
@@ -156,7 +156,7 @@ public class Sort {
      * @param right
      * @param comparator
      */
-    public static void quickSort(Object[] ele, int left, int right, Comparator comparator) {
+    public static void quickSort(Object[] ele, int left, int right, Comparator<Object> comparator) {
         if (left >= right) return;
         int mid = partition(ele, left, right, comparator);
         quickSort(ele, left, mid - 1, comparator);
@@ -179,7 +179,7 @@ public class Sort {
      * @param comparator
      * @return
      */
-    private static int partition(Object[] ele, int left, int right, Comparator comparator) {
+    private static int partition(Object[] ele, int left, int right, Comparator<Object> comparator) {
         //随机获取一个点作为坐标点
         int flag = new Random().nextInt(right - left + 1) + left;
         int keyIndex = left;

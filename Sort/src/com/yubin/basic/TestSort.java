@@ -35,7 +35,12 @@ public class TestSort {
         }
 
         start = System.currentTimeMillis();
-        Sort.quickSort(nums);
+        Sort.quickSort(nums, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
         end = System.currentTimeMillis();
         System.out.println("quick排序运行时间" + (end - start) + "ms");
     }
@@ -66,7 +71,8 @@ public class TestSort {
             System.out.print(num + " ");
         }
         System.out.println();
-        Sort.mergeSort(nums, (Comparator<Integer>) (o1, o2) -> o2 - o1);
+        //Sort.mergeSort(nums, (Comparator<Integer>) (o1, o2) -> o2 - o1);
+        Sort.quickSort(nums, (Comparator<Integer>) (o1, o2) -> o2 - o1);
         for (Integer num : nums) {
             System.out.print(num + " ");
         }
