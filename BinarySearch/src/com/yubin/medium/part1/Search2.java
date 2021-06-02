@@ -1,6 +1,6 @@
 package com.yubin.medium.part1;
 
-public class Search {
+public class Search2 {
     /**
      * 暴力枚举法
      *
@@ -43,7 +43,7 @@ public class Search {
     }
 
     public static void main(String[] args) {
-        new Search().test();
+        new Search2().test();
     }
 
     private void test() {
