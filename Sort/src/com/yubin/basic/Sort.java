@@ -12,10 +12,6 @@ public class Sort {
 
     /**
      * 交换索引i和j位置的元素
-     *
-     * @param ele
-     * @param i
-     * @param j
      */
     protected static void exch(Comparable[] ele, int i, int j) {
         Comparable c = ele[i];
@@ -38,8 +34,6 @@ public class Sort {
      * 希尔排序的思想：
      * 局部排序使用插入排序是因为数组已经局部有序
      * 那么插入成功后可以直接break出循环，从而降低时间复杂度
-     *
-     * @param ele
      */
     public static void shellSort(Comparable[] ele) {
         int len = ele.length;
@@ -150,11 +144,6 @@ public class Sort {
 
     /**
      * 合并分支
-     *
-     * @param ele
-     * @param left
-     * @param right
-     * @param comparator
      */
     public static void quickSort(Object[] ele, int left, int right, Comparator<Object> comparator) {
         if (left >= right) return;
@@ -172,12 +161,6 @@ public class Sort {
 
     /**
      * 划分有序段
-     *
-     * @param ele
-     * @param left
-     * @param right
-     * @param comparator
-     * @return
      */
     private static int partition(Object[] ele, int left, int right, Comparator<Object> comparator) {
         //随机获取一个点作为坐标点
