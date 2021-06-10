@@ -2,29 +2,56 @@ package com.yubin.basic;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Comparator;
-import java.util.Random;
+import java.util.*;
 
 /**
  * 基础类
  */
 public class Sort {
+    //桶排序的间隔段
+    public static final int GAP = 100;
 
     /**
      * 交换索引i和j位置的元素
      */
-    protected static void exch(Comparable[] ele, int i, int j) {
-        Comparable c = ele[i];
-        ele[i] = ele[j];
-        ele[j] = c;
-    }
-
     private static void exch(Object[] ele, int i, int j) {
         Object c = ele[i];
         ele[i] = ele[j];
         ele[j] = c;
     }
 
+    /**
+     * 桶排序的默认分组为GAP
+     *
+     * @param nums 待排序的数组
+     * @param size 桶的数量 （用户自定义数量）
+     */
+    public static void bucketSort(int[] nums, int size) {
+        List<Integer>[] buckets = getBucket(nums, size);
+        int index = 0;
+        for (int i = 0; i < buckets.length; i++) {
+            Collections.sort(buckets[i]);
+            for (Integer num : buckets[i]) {
+                nums[index++] = num;
+            }
+        }
+    }
+
+    /**
+     * @return 分组的桶
+     */
+    private static List<Integer>[] getBucket(int[] nums, int size) {
+        List<Integer>[] buckets = new List[size];
+        for (int i = 0; i < size; i++) {
+            buckets[i] = new ArrayList<>();
+        }
+        for (int num : nums) {
+            int index = num / GAP;
+            if (index >= size) throw new ArrayIndexOutOfBoundsException("the quantity of buckets is too small");
+            buckets[index].add(num);
+        }
+        return buckets;
+    }
 
     /**
      * 希尔排序板块
