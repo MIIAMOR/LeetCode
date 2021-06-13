@@ -1,6 +1,5 @@
 package com.yubin.easy.part2;
 
-import com.sun.source.tree.Tree;
 import com.yubin.TreeNode;
 
 import java.util.LinkedList;
@@ -19,12 +18,13 @@ public class MinDepth {
             int size = level.size();
             for (int i = 0; i < size; i++) {
                 TreeNode tree = level.remove(0);
-                if (tree != null)
+                if (tree != null) {
                     if (tree.left == null && tree.right == null) return depth;
                     else {
                         level.add(tree.left);
                         level.add(tree.right);
                     }
+                }
             }
             depth++;
         }
