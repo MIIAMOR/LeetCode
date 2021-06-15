@@ -5,6 +5,9 @@ import com.yubin.TreeNode;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 二叉树的最大深度
+ */
 public class MaxDepth {
     /**
      * 基于层析遍历思想
