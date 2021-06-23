@@ -20,3 +20,7 @@
 
 ## 8.[数据结构](DataStructure/数据结构.md)
 
+## 9. [数学问题](Math/数学.md)
+
+## 10. [位运算](BitOperation/位运算.md)
+
