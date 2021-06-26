@@ -40,7 +40,7 @@ public class StackOfPlates {
     }
 
     public int popAt(int index) {
-        if (index >= length) return -1;
+        if (index >= length || index < 0) return -1;
         if (index == length - 1) return pop();
         Node node = stackHead.next;
         for (int i = 0; i < index; i++) {

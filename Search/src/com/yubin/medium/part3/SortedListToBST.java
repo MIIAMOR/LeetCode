@@ -1,7 +1,7 @@
 package com.yubin.medium.part3;
 
-import com.yubin.ListNode;
-import com.yubin.TreeNode;
+import com.yubin.basic.ListNode;
+import com.yubin.basic.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

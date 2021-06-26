@@ -1,4 +1,4 @@
-package com.yubin;
+package com.yubin.basic;
 
 /**
  * 树结构

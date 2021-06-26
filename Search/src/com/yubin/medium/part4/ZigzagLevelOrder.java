@@ -1,6 +1,6 @@
 package com.yubin.medium.part4;
 
-import com.yubin.TreeNode;
+import com.yubin.basic.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

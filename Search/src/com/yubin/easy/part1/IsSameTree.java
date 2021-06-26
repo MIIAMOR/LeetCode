@@ -1,6 +1,6 @@
 package com.yubin.easy.part1;
 
-import com.yubin.TreeNode;
+import com.yubin.basic.TreeNode;
 
 public class IsSameTree {
     public boolean isSameTree(TreeNode p, TreeNode q) {

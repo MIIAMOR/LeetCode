@@ -1,4 +1,4 @@
-package com.yubin;
+package com.yubin.basic;
 
 import java.util.List;
 

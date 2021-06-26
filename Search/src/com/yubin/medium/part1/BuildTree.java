@@ -1,6 +1,6 @@
 package com.yubin.medium.part1;
 
-import com.yubin.TreeNode;
+import com.yubin.basic.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

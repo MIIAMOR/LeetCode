@@ -1,4 +1,4 @@
-package com.yubin;
+package com.yubin.basic;
 
 public class ListNode {
     public int val;

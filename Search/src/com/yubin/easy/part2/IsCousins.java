@@ -1,6 +1,6 @@
 package com.yubin.easy.part2;
 
-import com.yubin.TreeNode;
+import com.yubin.basic.TreeNode;
 
 import java.util.Deque;
 import java.util.LinkedList;
