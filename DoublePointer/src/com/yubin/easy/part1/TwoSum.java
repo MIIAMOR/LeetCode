@@ -12,8 +12,8 @@ public class TwoSum {
         int[] res = new int[2];
         int left = 0, right = numbers.length - 1;
         while (left < right) {
-            //相加结果大于target，则需要更小的数作为加数，right--
-            //相加结果小于target，则需要更大的数作为加数，left++
+            // 相加结果大于target，则需要更小的数作为加数，right--
+            // 相加结果小于target，则需要更大的数作为加数，left++
             if (numbers[left] + numbers[right] > target) right--;
             else if (numbers[left] + numbers[right] < target) left++;
             else {
